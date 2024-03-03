@@ -1,0 +1,187 @@
+{
+	"info": {
+		"_postman_id": "45564662-5424-43e2-8245-e43a8fd4f3ef",
+		"name": "corsoss",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "12214533"
+	},
+	"item": [
+		{
+			"name": "corsoss-breeze register",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "name",
+							"value": "Mauro",
+							"type": "text"
+						},
+						{
+							"key": "email",
+							"value": "docentemaurocasadei@gmail.com",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "mauro2024",
+							"type": "text"
+						},
+						{
+							"key": "password_confirmation",
+							"value": "mauro2024",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:8000/api/register",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "corsoss-breeze login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "email",
+							"value": "docentemaurocasadei@gmail.com",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "mauro2024",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:8000/api/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "corsoss-breeze utenti",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "2|Dyid3L6gGwkBSDNjpe2OUMdu4Q1lxU0RgEBbePfPf96de8ff",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "email",
+							"value": "docentemaurocasadei@gmail.com",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "mauro2024",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:8000/api/utenti",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"utenti"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "corsoss-breeze utente",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "2|Dyid3L6gGwkBSDNjpe2OUMdu4Q1lxU0RgEBbePfPf96de8ff",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "email",
+							"value": "docentemaurocasadei@gmail.com",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "mauro2024",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:8000/api/utente/5",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"utente",
+						"5"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
