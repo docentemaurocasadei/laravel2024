@@ -30,6 +30,7 @@ class WorkerController extends Controller
      */
     public function store(WorkerRequest $request)
     {
+        return redirect()->route('workers.create')->with('success', 'Record salvato con successo!');
         return response()->json('controllo avvenuto con successo');
     }
 

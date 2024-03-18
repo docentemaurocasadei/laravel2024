@@ -13,5 +13,7 @@
         <h1>Demo FormRequest</h1>
         @yield('content')
     </section>
+    {{-- <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script> --}}
+    @stack('after_scripts')
 </body>
 </html>

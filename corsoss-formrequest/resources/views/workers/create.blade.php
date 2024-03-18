@@ -24,3 +24,16 @@
           <button class="btn btn-primary" type="submit">Salva</button>
     </form>
 @endsection
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+@push('after_scripts')
+  <script defer>
+        setTimeout(() => { //timeout serve per non eseguire lo script prima della fine del caricamento, sarebbe superfluo con la cdn
+          @if(session('success'))
+            Swal.fire('Operazione completata!', "{{ session('success') }}", 'success');
+          @elseif(session('error'))
+            Swal.fire('Operazione non completata!', "{{ session('error') }}", 'error');
+          @endif
+        }, 200);
+      // Verifica se ci sono messaggi di sessione flash
+  </script>
+@endpush

@@ -21,3 +21,11 @@ email required e valid
 
 restituire per ko gli errori da mostrare in blade
 restituire per ok un messaggio "campi validati con successo"
+
+
+****** 2 parte
+installare swal
+npm install sweetalert2
+
+includerlo nel js
+import Swal from 'sweetalert2'

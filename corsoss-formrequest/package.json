@@ -12,6 +12,7 @@
     "dependencies": {
         "bootstrap": "^5.3.3",
         "sass": "^1.72.0",
+        "sweetalert2": "^11.10.6",
         "vite-plugin-sass": "^0.1.0"
     }
 }
