@@ -1,6 +1,3 @@
-https://kinsta.com/it/blog/api-laravel/
-
-
 composer create-project laravel/laravel laravel-api-create-test
 php artisan make:model Product -m
 

@@ -1,9 +1,9 @@
 <?php
 
 use App\Http\Controllers\PrivateController;
+use App\Http\Controllers\TestController;
 use App\Http\Middleware\RichiestaValida;
 use Illuminate\Support\Facades\Route;
-
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -22,9 +22,11 @@ Route::get('/', function () {
 Route::get('pubblica/', function () {
     return response()->json('pubblica');
 });
-Route::get('privata/', function () {
-    return response()->json('privata');
-})->middleware(['richiesta.valida']);
+Route::middleware(['richiesta.valida'])->group(function(){
+    Route::get('privata/', function () {
+        return response()->json('privata');
+    });
+    Route::get('privata-controller/', [PrivateController::class, 'index']);
+    Route::get('privata-with-cookie/', [PrivateController::class, 'indexWithCookie']);
+});
 
-Route::get('privata-controller/', [PrivateController::class, 'index'])->middleware(['richiesta.valida']);
-Route::get('privata-with-cookie/', [PrivateController::class, 'indexWithCookie'])->middleware(['richiesta.valida']);
