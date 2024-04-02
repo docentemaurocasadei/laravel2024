@@ -1,6 +1,8 @@
 <?php
 
 namespace App\Exceptions;
+use Illuminate\Database\Eloquent\ModelNotFoundException;
+use Symfony\Component\HttpFoundation\Response;
 
 use Illuminate\Foundation\Exceptions\Handler as ExceptionHandler;
 use Throwable;

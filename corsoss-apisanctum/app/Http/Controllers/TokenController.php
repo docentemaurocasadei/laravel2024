@@ -33,14 +33,12 @@ class TokenController extends Controller
             'password' => $validatedData['password'],
         ];
         if (Auth::attempt($credentials)) {
-            Log::debug('valide');
             // Se le credenziali sono valide, genera un token
             $user = Auth::user();
             $token = $user->createToken('api')->plainTextToken;
 
             return response()->json(['token' => $token], 200);
         } else {
-            Log::debug('errate');
             // Se le credenziali non sono valide, ritorna un errore
             return response()->json(['error' => 'Unauthorized'], 401);
         }
