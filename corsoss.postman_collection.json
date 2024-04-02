@@ -7,6 +7,444 @@
 	},
 	"item": [
 		{
+			"name": "corsoss-apisanctum",
+			"item": [
+				{
+					"name": "corsoss-apisanctum getToken",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "email",
+									"value": "email@admin.it",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "password",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/get-token",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"get-token"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "corsoss-apisanctum get user",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "3|LIeP59vN9NROnYsmfEgwOXSS9hx3ORXxEqgSBKMX47e7f5d3",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "email",
+									"value": "email@admin.it",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "password",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/user",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"user"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "corsoss-apisanctum get category",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "3|LIeP59vN9NROnYsmfEgwOXSS9hx3ORXxEqgSBKMX47e7f5d3",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "email",
+									"value": "email@admin.it",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "password",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/category",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"category"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "corsoss-apisanctum get products",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "3|LIeP59vN9NROnYsmfEgwOXSS9hx3ORXxEqgSBKMX47e7f5d3",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "email",
+									"value": "email@admin.it",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "password",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/product",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"product"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "corsoss-apisanctum create category",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "3|LIeP59vN9NROnYsmfEgwOXSS9hx3ORXxEqgSBKMX47e7f5d3",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "name",
+									"value": "Elettrodomestici2",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/category",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"category"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "corsoss-apisanctum delete category",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "3|LIeP59vN9NROnYsmfEgwOXSS9hx3ORXxEqgSBKMX47e7f5d3",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": []
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/category/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"category",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "corsoss-apisanctum delete product",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "3|LIeP59vN9NROnYsmfEgwOXSS9hx3ORXxEqgSBKMX47e7f5d3",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": []
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/product/2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"product",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "corsoss-apisanctum create product",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "3|LIeP59vN9NROnYsmfEgwOXSS9hx3ORXxEqgSBKMX47e7f5d3",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "name",
+									"value": "Lavatrice Rex LA24",
+									"type": "text"
+								},
+								{
+									"key": "category_id",
+									"value": "3",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/product",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"product"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "corsoss-apisanctum update category",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "3|LIeP59vN9NROnYsmfEgwOXSS9hx3ORXxEqgSBKMX47e7f5d3",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "name",
+									"value": "Elettrodomestici4",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/category/6",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"category",
+								"6"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "corsoss-apisanctum update product",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "3|LIeP59vN9NROnYsmfEgwOXSS9hx3ORXxEqgSBKMX47e7f5d3",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "name",
+									"value": "Lavatrice Rex LA2",
+									"type": "text"
+								},
+								{
+									"key": "category_id",
+									"value": "5",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/product/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"product",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
 			"name": "corsoss-breeze register",
 			"request": {
 				"method": "POST",
@@ -577,6 +1015,168 @@
 						"products"
 					]
 				}
+			},
+			"response": []
+		},
+		{
+			"name": "corsoss-request",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "1|nADnvgwO6HbNNX172OsQalKhxUM9HsWBHaCbVKNu196eed5f",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8000/request",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"request"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "corsoss-route mypost",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "X-CSRF-TOKEN",
+						"value": "lamrspanRKeAiuE0ivEdqs60gXfsjK99e1ZT9rnH",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "miavar",
+							"value": "1234",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/mypost",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"mypost"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "corsoss-route mydelete",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "X-CSRF-TOKEN",
+						"value": "lamrspanRKeAiuE0ivEdqs60gXfsjK99e1ZT9rnH",
+						"type": "text"
+					},
+					{
+						"warning": "This is a duplicate header and will be overridden by the Content-Type header generated by Postman.",
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "miavar",
+							"value": "43215",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/mydelete/1",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"mydelete",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "corsoss-route mypatch",
+			"request": {
+				"method": "PATCH",
+				"header": [
+					{
+						"key": "X-CSRF-TOKEN",
+						"value": "lamrspanRKeAiuE0ivEdqs60gXfsjK99e1ZT9rnH",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "var",
+							"value": "123",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/mypatch/1",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"mypatch",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "corsoss-route csrf get token",
+			"request": {
+				"method": "GET",
+				"header": []
 			},
 			"response": []
 		}
