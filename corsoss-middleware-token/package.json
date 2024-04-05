@@ -1,0 +1,12 @@
+{
+    "private": true,
+    "scripts": {
+        "dev": "concurrently \"npm run vite --clearScreen false\" \"npm run tsc -w --preserveWatchOutput\"",
+        "build": "vite build"
+    },
+    "devDependencies": {
+        "axios": "^1.1.2",
+        "laravel-vite-plugin": "^0.7.2",
+        "vite": "^4.0.0"
+    }
+}

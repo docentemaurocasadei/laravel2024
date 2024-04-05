@@ -1,0 +1,14 @@
+<select [ngModel]="selectedCategoryId" (ngModelChange)="getPosts($event)">
+  <option value="">Filtra i Post</option>
+  <option *ngFor="let category of categories" [value]="category.id">
+    {{ category.name }}
+  </option>
+</select>
+<ul>
+  <li *ngFor="let post of posts">
+    <h2>{{ post.name }}</h2>
+    <p>{{ post.description }}</p>
+    <p>Author: {{ post.author }}</p>
+    <p>Date Published: {{ post.date_publish }}</p>
+  </li>
+</ul>
