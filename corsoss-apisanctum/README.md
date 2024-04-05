@@ -1,4 +1,4 @@
-esempio completo per API CRUD
+esempio completo per API sanctum
 
 composer require laravel/sanctum
 php artisan vendor:publish --provider="Laravel\Sanctum\SanctumServiceProvider"

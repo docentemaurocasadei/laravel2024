@@ -1,3 +1,6 @@
+obiettivo: realizzare un applicativo angular e una api laravel per la visualizzazione di una lista prodotti
+demo su http://localhost:8000/products
+
 creare una api con laravel con
 - model Product
 - controller ProductController

@@ -8,6 +8,6 @@
     @vite(['resources/css/app.css', 'resources/js/app.js', 'resources/scss/app.scss'])
 </head>
 <body>
-    <h1 class="text-center">miofile</h1>
+    <h1 class="text-center">vista blade presentata correttamente</h1>
 </body>
 </html>

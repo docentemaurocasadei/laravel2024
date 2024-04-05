@@ -1,3 +1,6 @@
+esempio completo per API sanctum
+
+
 composer create-project laravel/laravel laravel-api-create-test
 php artisan make:model Product -m
 

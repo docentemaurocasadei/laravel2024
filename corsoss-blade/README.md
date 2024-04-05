@@ -1,3 +1,6 @@
+obiettivo: comprendere come gestire vite, installare bootstrap, gestire sezione in blade
+demo su http://localhost:8000/message
+
 abilitare utilizzo di bootstrap
 npm install bootstrap
 npm install sass

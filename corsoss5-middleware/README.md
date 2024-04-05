@@ -1,3 +1,11 @@
+obiettivo: realizzare 2 route cuna privata e una pubblica
+demo su 
+http://127.0.0.1:8000/privata?token=1234 ok
+http://127.0.0.1:8000/privata errore 403
+http://127.0.0.1:8000/pubblica ok
+
+----
+
 creare una route /pubblica
 creare una route /privata
 

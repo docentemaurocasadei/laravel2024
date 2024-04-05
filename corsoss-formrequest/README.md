@@ -1,3 +1,6 @@
+obiettivo: realizzare una validazione di parametri tramite FormRequest e ritornare errori nella vista blade
+demo su http://localhost:8000/workers
+
 composer create-project laravel/laravel:^10.0 corsoss-formrequest
 php artisan make:controller WorkerController --resource
 php artisan make:request WorkerRequest

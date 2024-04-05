@@ -1,3 +1,6 @@
+obiettivo: realizzare una rotta per ritornare dei parametri della request
+demo su http://localhost:8000/request
+
 creare una rotta request
 Route::get('/request', RequestController::class);
 

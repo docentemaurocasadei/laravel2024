@@ -1,3 +1,16 @@
+obiettivo: realizzare un sistema crud completo con lista in datatables
+GET|HEAD        products ............................................ products.index › ProductController@index  
+  POST            products ............................................ products.store › ProductController@store  
+  GET|HEAD        products/create ................................... products.create › ProductController@create  
+  GET|HEAD        products/{product} .................................... products.show › ProductController@show  
+  PUT|PATCH       products/{product} ................................ products.update › ProductController@update  
+  DELETE          products/{product} .............................. products.destroy › ProductController@destroy  
+  GET|HEAD        products/{product}/edit ............................... products.edit › ProductController@edit
+
+
+demo su http://localhost:8000/products
+
+
 esempio di crud completo:
 - laravel
 - migration

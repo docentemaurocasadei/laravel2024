@@ -1,3 +1,9 @@
+obiettivo: test per il csrf
+demo su http://localhost:8000/message
+demo su http://localhost:8000/form
+demo su http://localhost:8000/form-cors
+demo su http://localhost:8000/test-cors
+
 dimostrazione del richiamo con e senza @csrf
 - route
 - view
