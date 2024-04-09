@@ -1,0 +1,7 @@
+- creare una rotta /api/products
+- creare un controller ProductController
+- creare dentro ProductController un metodo index
+- ritornare una json di un array di 5 prodotti (name,sku,price)
+- all'interno della rotta /api/products richiamare il metodo index del controller
+- creare un middleware nominato TokenMiddleware che legge dalla request un parametro token (headers) e verifica se uguale a 1234 se ok lascia passare altrimenti blocca la richiesta
+- applicare il middleware alla rotta /api/products
