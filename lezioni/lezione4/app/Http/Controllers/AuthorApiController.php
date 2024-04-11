@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\AuthorRequest;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Validator;
 
 class AuthorApiController extends Controller
@@ -13,7 +14,11 @@ class AuthorApiController extends Controller
      */
     public function index()
     {
-        return response()->json(['message' => 'index ok']);
+        // return response()->json(['message' => 'index ok']);
+        $authors = DB::select('select * from authors');
+        return response()->json([
+            'authors' => $authors,
+        ]);
     }
 
     /**
@@ -29,7 +34,13 @@ class AuthorApiController extends Controller
             return response()->json(['errors' => $validator->errors()], 400);
         }
         $validatedData = $validator->validate();
-        return response()->json(['message' => 'store ok']);
+        // $insert_data = Arr::only($validatedData, ['name', 'surname']);
+        //todo: sistemare
+        DB::insert('insert into authors (`name`, `surname`) VALUES (?,?)',[
+            $validatedData['name'],$validatedData['surname']
+        ]);
+
+        return response()->json(['message' => 'autore inserito con successo']);
     }
 
     /**
@@ -46,7 +57,11 @@ class AuthorApiController extends Controller
             return response()->json(['errors' => $validator->errors()], 400);
         }
         $validatedData = $validator->validate();
-        return response()->json(['message' => 'update ok', 'request' => $request->validated()]);
+
+        $affected = DB::update('UPDATE authors SET `name`=?, `surname`=? WHERE `id`=?',[
+            $validatedData['name'],$validatedData['surname'], $id
+        ]);
+        return response()->json(['message' => "update ok, aggiornati n.{$affected}"]);
     }
 
     /**
@@ -54,6 +69,7 @@ class AuthorApiController extends Controller
      */
     public function destroy(string $id)
     {
-        return response()->json(['message' => 'destroy ok']);
+        DB::delete('DELETE FROM authors WHERE `id` = ?', [$id]);
+        return response()->json(['message' => 'cancellato correttamente']);
     }
 }

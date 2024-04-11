@@ -25,3 +25,26 @@ creare tabella authors create_authors_table tramite migrate
 > php artisan make:migration add_fields_to_authors_table      
 
 > php artisan make:model Category --migration 
+
+> php artisan tinker
+--eseguire query sulla tabella authors
+> DB::select('select * from authors');
+> DB::select('select * from authors where id > :id and name = :nome', ['nome' => 'Mario','id' => 1]);   
+> DB::select('select * from authors where id > ? and name = ?', [1, 'Mario']);  
+
+nel controller AuthorApiController
+metodo index
+$authors = DB::select('select * from authors'); 
+
+metodo store
+DB::insert('insert into authors (`name`, `surname`) VALUES (?,?)',[
+    $validatedData['name'],$validatedData['surname']
+]);
+
+metodo update
+DB::update('UPDATE authors SET `name`=?, `surname`=? WHERE `id`=?',[
+            $validatedData['name'],$validatedData['surname'], $id
+        ]);
+
+metodo destroy
+DB::delete('DELETE FROM authors WHERE `id` = ?', [$id]);
