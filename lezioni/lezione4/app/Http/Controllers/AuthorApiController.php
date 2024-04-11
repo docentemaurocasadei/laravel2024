@@ -36,6 +36,7 @@ class AuthorApiController extends Controller
         $validatedData = $validator->validate();
         // $insert_data = Arr::only($validatedData, ['name', 'surname']);
         //todo: sistemare
+        //todo: sistemare FormRequest
         DB::insert('insert into authors (`name`, `surname`) VALUES (?,?)',[
             $validatedData['name'],$validatedData['surname']
         ]);
