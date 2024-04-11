@@ -15,3 +15,5 @@ validiamo il name e surname dell'author nel metodo store
 
 da ogni metodo (index, store, update, delete) dovrà ritornare un json con il nome del metodo creato nella variabile 'message' e un returncode congruo
 
+nel metodo store e update validare name e surname richiesti e minimo lunghi 5
+
