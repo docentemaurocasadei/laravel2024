@@ -17,3 +17,11 @@ da ogni metodo (index, store, update, delete) dovrà ritornare un json con il no
 
 nel metodo store e update validare name e surname richiesti e minimo lunghi 5
 
+php artisan migrate
+
+creare tabella authors create_authors_table tramite migrate
+> php artisan make:migration create_authors_table
+
+> php artisan make:migration add_fields_to_authors_table      
+
+> php artisan make:model Category --migration 

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\AuthorRequest;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 
@@ -36,7 +37,16 @@ class AuthorApiController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        return response()->json(['message' => 'update ok']);
+        // $validatedData = $request->validated();
+        $validator = Validator::make($request->all(), [
+            'name' => ['required', 'min:5'],
+            'surname' => 'required|min:5',
+        ]);
+        if ($validator->fails()){
+            return response()->json(['errors' => $validator->errors()], 400);
+        }
+        $validatedData = $validator->validate();
+        return response()->json(['message' => 'update ok', 'request' => $request->validated()]);
     }
 
     /**
