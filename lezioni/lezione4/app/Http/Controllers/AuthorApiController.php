@@ -6,7 +6,7 @@ use App\Http\Requests\AuthorRequest;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Validator;
-
+use Illuminate\Support\Arr;
 class AuthorApiController extends Controller
 {
     /**
@@ -24,23 +24,22 @@ class AuthorApiController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store(AuthorRequest $request)
     {
-        $validator = Validator::make($request->all(), [
-            'name' => ['required', 'min:5'],
-            'surname' => 'required|min:5',
-        ]);
-        if ($validator->fails()){
-            return response()->json(['errors' => $validator->errors()], 400);
-        }
-        $validatedData = $validator->validate();
-        // $insert_data = Arr::only($validatedData, ['name', 'surname']);
+        // $validator = Validator::make($request->all(), [
+        //     'name' => ['required', 'min:5'],
+        //     'surname' => 'required|min:5',
+        // ]);
+        // if ($validator->fails()){
+        //     return response()->json(['errors' => $validator->errors()], 400);
+        // }
+        $validatedData = $request->validated();
+        $insert_data = Arr::only($validatedData, ['name', 'surname']);
         //todo: sistemare
-        //todo: sistemare FormRequest
-        DB::insert('insert into authors (`name`, `surname`) VALUES (?,?)',[
-            $validatedData['name'],$validatedData['surname']
-        ]);
-
+        // DB::insert('insert into authors (`name`, `surname`) VALUES (?,?)',[
+        //     $validatedData['name'],$validatedData['surname']
+        // ]);
+        DB::table('authors')->insert($insert_data); //alternativa
         return response()->json(['message' => 'autore inserito con successo']);
     }
 
