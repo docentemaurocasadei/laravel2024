@@ -8,4 +8,5 @@ Route::apiResource('products', ProductController::class);
 creato models Product
 creato controller ProductController
 creata migration per table products
-creato seeder per popolare 50 prodotti
+--creato seeder per popolare 50 prodotti oppure poloare da phpmyadmin
+lanciare da POSTMAN url GET http://localhost:8000/api/products
