@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\CarRequest;
 use Illuminate\Http\Request;
 use App\Models\Car;
 class CarController extends Controller
@@ -69,10 +70,11 @@ App\Models\Car::where('id',5)->delete();
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store(CarRequest $request)
     {
         //implementare la validazione
-        $insertedData = $request->only(['name', 'hp', 'brand_id']);
+        // $insertedData = $request->only(['name', 'hp', 'brand_id']);
+        $insertedData = $request->validated();
         $ret = Car::create($insertedData);
         return response()->json([
             'message' => 'Car created successfully.',
@@ -93,10 +95,11 @@ App\Models\Car::where('id',5)->delete();
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(CarRequest $request, string $id)
     {
         //implementare la validazione
-        $updatedData = $request->only(['name', 'hp', 'brand_id']);
+        // $updatedData = $request->only(['name', 'hp', 'brand_id']);
+        $updatedData = $request->validated();
         $ret = Car::query()->where('id', $id)->update($updatedData);
         return response()->json([
             'message' => 'Car updated successfully.'
