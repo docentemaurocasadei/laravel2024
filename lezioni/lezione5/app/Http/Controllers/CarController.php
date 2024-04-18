@@ -62,16 +62,8 @@ App\Models\Car::where('id',5)->delete();
     public function index()
     {
         return response()->json([
-            'cars' => Cars::query()->with('brand')->all(),
+            'cars' => Car::query()->with('brand')->get(),
         ]);
-    }
-
-    /**
-     * Show the form for creating a new resource.
-     */
-    public function create()
-    {
-        //
     }
 
     /**
@@ -79,7 +71,13 @@ App\Models\Car::where('id',5)->delete();
      */
     public function store(Request $request)
     {
-        //
+        //implementare la validazione
+        $insertedData = $request->only(['name', 'hp', 'brand_id']);
+        $ret = Car::create($insertedData);
+        return response()->json([
+            'message' => 'Car created successfully.',
+            'id' => $ret
+        ]);
     }
 
     /**
@@ -87,15 +85,9 @@ App\Models\Car::where('id',5)->delete();
      */
     public function show(string $id)
     {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     */
-    public function edit(string $id)
-    {
-        //
+        return response()->json([
+            'car' => Car::query()->with('brand')->where('id', $id)->firstOrFail(),
+        ]);
     }
 
     /**
@@ -103,7 +95,13 @@ App\Models\Car::where('id',5)->delete();
      */
     public function update(Request $request, string $id)
     {
-        //
+        //implementare la validazione
+        $updatedData = $request->only(['name', 'hp', 'brand_id']);
+        $ret = Car::query()->where('id', $id)->update($updatedData);
+        return response()->json([
+            'message' => 'Car updated successfully.'
+        ]);
+
     }
 
     /**
@@ -111,6 +109,9 @@ App\Models\Car::where('id',5)->delete();
      */
     public function destroy(string $id)
     {
-        //
+        $ret = Car::query()->where('id', $id)->delete();
+        return response()->json([
+            'message' => 'Product deleted successfully.'
+        ]);
     }
 }

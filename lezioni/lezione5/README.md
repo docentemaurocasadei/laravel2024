@@ -14,7 +14,7 @@ implementare il file delle rotte api e il controller BrandController con
 testare le route create con POSTMAN
 
 parte 2
-- aggiungere il controllo dei campi con un CarRequest
+- aggiungere il controllo dei campi con un CarRequest (validazione)
 
 parte 3
 - utilizzare laravel sanctum per proteggere le route
