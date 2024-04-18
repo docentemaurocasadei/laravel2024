@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
+use App\Models\Car;
 class CarController extends Controller
 {
     //per ritornare 1 modello con il suo brand
@@ -62,7 +62,7 @@ App\Models\Car::where('id',5)->delete();
     public function index()
     {
         return response()->json([
-            'cars' =>
+            'cars' => Cars::query()->with('brand')->all(),
         ]);
     }
 
