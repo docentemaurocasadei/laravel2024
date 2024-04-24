@@ -18,3 +18,8 @@ parte 2
 
 parte 3
 - utilizzare laravel sanctum per proteggere le route
+installare sanctum
+creare metodo getToken in controller TokenController con regole di validazione TokenRequest
+creare da tinker un utente
+App\Models\User::create(['email' => 'admin@email.it', 'name' => 'admin', 'password' => H
+ash::make('miapwd')]); 
