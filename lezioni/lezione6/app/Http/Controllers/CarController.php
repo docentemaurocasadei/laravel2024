@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Http\Requests\CarRequest;
 use Illuminate\Http\Request;
 use App\Models\Car;
+use Psy\Util\Json;
+
 class CarController extends Controller
 {
     //per ritornare 1 modello con il suo brand
@@ -115,6 +117,14 @@ App\Models\Car::where('id',5)->delete();
         $ret = Car::query()->where('id', $id)->delete();
         return response()->json([
             'message' => 'Product deleted successfully.'
+        ]);
+    }
+    public function customCar(Car $car) {
+        return response()->json([
+            'car' => [
+                'name' => $car->name,
+                'nameUpper' => $car->nameToUpper,
+                ]
         ]);
     }
 }

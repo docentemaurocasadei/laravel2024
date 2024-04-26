@@ -18,6 +18,7 @@ use Illuminate\Support\Facades\Route;
 */
 Route::middleware('auth:sanctum')->group(function(){
     Route::apiResource('/cars', CarController::class);
+    Route::get('/car-custom/{car}', [CarController::class, 'customCar']);
     Route::apiResource('/brands', BrandController::class);
 });
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {

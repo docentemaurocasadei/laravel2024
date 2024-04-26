@@ -23,3 +23,6 @@ creare metodo getToken in controller TokenController con regole di validazione T
 creare da tinker un utente
 App\Models\User::create(['email' => 'admin@email.it', 'name' => 'admin', 'password' => H
 ash::make('miapwd')]); 
+
+php artisan make:seeder CarSeeder 
+php artisan db:seed --class=CarSeeder

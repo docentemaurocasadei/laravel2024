@@ -17,4 +17,7 @@ class Car extends Model
     public function brand():BelongsTo {
         return $this->belongsTo(Brand::class);
     }
+    public function getNameToUpperAttribute(){
+        return strtoupper($this->name);
+    }
 }

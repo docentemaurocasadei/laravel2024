@@ -11,7 +11,7 @@ class TokenRequest extends FormRequest
      */
     public function authorize(): bool
     {
-        return false;
+        return true;
     }
 
     /**
