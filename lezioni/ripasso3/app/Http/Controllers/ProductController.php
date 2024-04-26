@@ -34,7 +34,7 @@ class ProductController extends Controller
         $validateData = $request->validated();
         $ret = Product::create($validateData);
         return response()->json([
-            'messagge' => 'inserito con successo'
+            'message' => 'inserito con successo'
         ], 201);
     }
 
@@ -59,7 +59,11 @@ class ProductController extends Controller
      */
     public function update(ProductRequest $request, string $id)
     {
-        //
+        $validateData = $request->validated();
+        $ret = Product::query()->where('id', $id)->update($validateData);
+        return response()->json([
+            'message' => 'aggiornato con successo'
+        ], 200);
     }
 
     /**
@@ -67,6 +71,9 @@ class ProductController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        Product::query()->where('id', $id)->delete();
+        return response()->json([
+            'message' => 'cancellato con successo'
+        ], 200);
     }
 }
