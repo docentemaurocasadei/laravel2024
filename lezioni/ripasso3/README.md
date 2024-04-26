@@ -6,3 +6,7 @@ php artisan migrate
 //personalizzare il file routes/api.php
 
  php artisan make:controller ProductController -r
+
+ php artisan make:model Category -m
+ php artisan make:controller CategoryController -r 
+ php artisan make:migration add_fields_to_products_table
