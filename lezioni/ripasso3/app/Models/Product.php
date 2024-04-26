@@ -9,10 +9,10 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
 class Product extends Model
 {
     use HasFactory;
-    // protected $guarded = [];
-    protected $fillable = [
-        'name', 'price'
-    ];
+    protected $guarded = [];
+    // protected $fillable = [
+    //     'name', 'price', 'category_id'
+    // ];
     //relazione
     public function category() : BelongsTo {
         return $this->belongsTo(Category::class);
